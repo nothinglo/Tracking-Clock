@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UserAccount</key>
+	<string>nothinglo</string>
+	<key>Image</key>
+	<string>userImage.jpg</string>
+	<key>Locations</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>HOME</string>
+			<key>Latitude</key>
+			<real>25.05</real>
+			<key>Longitude</key>
+			<real>121.45</real>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>NCCU</string>
+			<key>Latitude</key>
+			<real>24.9</real>
+			<key>Longitude</key>
+			<real>121.6</real>
+		</dict>
+	</array>
+	<key>Members</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>小玉</string>
+			<key>Image</key>
+			<string>userImage2.jpg</string>
+			<key>Latitude</key>
+			<real>25.051</real>
+			<key>Longitude</key>
+			<real>121.451</real>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>阿囧</string>
+			<key>Image</key>
+			<string>userImage3.jpg</string>
+			<key>Latitude</key>
+			<real>25.049</real>
+			<key>Longitude</key>
+			<real>121.448</real>
+		</dict>
+	</array>
+</dict>
+</plist>
