@@ -35,7 +35,6 @@
     self.locationAnnotation = [MKPointAnnotation new];
     self.locationAnnotation.coordinate = self.location.coordinate;
     self.locationAnnotation.title = self.title;
-    NSLog(@"123");
 }
 
 - (void)didReceiveMemoryWarning
