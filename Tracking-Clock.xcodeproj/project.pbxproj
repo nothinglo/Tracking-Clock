@@ -17,6 +17,19 @@
 		39A761491749448800DB2BEC /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 39A761481749448800DB2BEC /* Default@2x.png */; };
 		39A7614B1749448800DB2BEC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 39A7614A1749448800DB2BEC /* Default-568h@2x.png */; };
 		39A7614E1749448800DB2BEC /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39A7614C1749448800DB2BEC /* MainStoryboard.storyboard */; };
+		39A7616D1749462F00DB2BEC /* UGHomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A76159174944C800DB2BEC /* UGHomeTableViewController.m */; };
+		39A7616E1749462F00DB2BEC /* UGImagePin.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A7615B174944C800DB2BEC /* UGImagePin.m */; };
+		39A7616F1749462F00DB2BEC /* UGMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A7615D174944C800DB2BEC /* UGMapViewController.m */; };
+		39A761701749462F00DB2BEC /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A76162174944E200DB2BEC /* AsyncImageView.m */; };
+		39A761711749462F00DB2BEC /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A76164174944E200DB2BEC /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		39A761721749462F00DB2BEC /* UGDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A76166174944E200DB2BEC /* UGDataSource.m */; };
+		39A761731749462F00DB2BEC /* UGFriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A76168174944E200DB2BEC /* UGFriendCell.m */; };
+		39A761741749462F00DB2BEC /* UGFriendTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A7616A174944E200DB2BEC /* UGFriendTableViewController.m */; };
+		39A761751749462F00DB2BEC /* UGHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A7616C174944E200DB2BEC /* UGHomeCell.m */; };
+		39A761771749467D00DB2BEC /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39A761761749467D00DB2BEC /* Accounts.framework */; };
+		39A76179174946A800DB2BEC /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39A76178174946A800DB2BEC /* Social.framework */; };
+		39A7617B174946B000DB2BEC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39A7617A174946B000DB2BEC /* CoreLocation.framework */; };
+		39A7617D174946B600DB2BEC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39A7617C174946B600DB2BEC /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +69,10 @@
 		39A7616A174944E200DB2BEC /* UGFriendTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UGFriendTableViewController.m; sourceTree = "<group>"; };
 		39A7616B174944E200DB2BEC /* UGHomeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UGHomeCell.h; sourceTree = "<group>"; };
 		39A7616C174944E200DB2BEC /* UGHomeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UGHomeCell.m; sourceTree = "<group>"; };
+		39A761761749467D00DB2BEC /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		39A76178174946A800DB2BEC /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		39A7617A174946B000DB2BEC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		39A7617C174946B600DB2BEC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +80,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39A7617D174946B600DB2BEC /* MapKit.framework in Frameworks */,
+				39A7617B174946B000DB2BEC /* CoreLocation.framework in Frameworks */,
+				39A76179174946A800DB2BEC /* Social.framework in Frameworks */,
+				39A761771749467D00DB2BEC /* Accounts.framework in Frameworks */,
 				39A761351749448800DB2BEC /* UIKit.framework in Frameworks */,
 				39A761371749448800DB2BEC /* Foundation.framework in Frameworks */,
 				39A761391749448800DB2BEC /* CoreGraphics.framework in Frameworks */,
@@ -92,6 +113,10 @@
 		39A761331749448800DB2BEC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				39A7617C174946B600DB2BEC /* MapKit.framework */,
+				39A7617A174946B000DB2BEC /* CoreLocation.framework */,
+				39A76178174946A800DB2BEC /* Social.framework */,
+				39A761761749467D00DB2BEC /* Accounts.framework */,
 				39A761341749448800DB2BEC /* UIKit.framework */,
 				39A761361749448800DB2BEC /* Foundation.framework */,
 				39A761381749448800DB2BEC /* CoreGraphics.framework */,
@@ -105,28 +130,15 @@
 				39A761431749448800DB2BEC /* UGAppDelegate.h */,
 				39A761441749448800DB2BEC /* UGAppDelegate.m */,
 				39A7614C1749448800DB2BEC /* MainStoryboard.storyboard */,
-				39A76157174944C800DB2BEC /* tracking.plist */,
-				39A76158174944C800DB2BEC /* UGHomeTableViewController.h */,
-				39A76159174944C800DB2BEC /* UGHomeTableViewController.m */,
 				39A7615A174944C800DB2BEC /* UGImagePin.h */,
 				39A7615B174944C800DB2BEC /* UGImagePin.m */,
 				39A7615C174944C800DB2BEC /* UGMapViewController.h */,
 				39A7615D174944C800DB2BEC /* UGMapViewController.m */,
-				39A7615E174944C800DB2BEC /* userImage.jpg */,
-				39A7615F174944C800DB2BEC /* userImage2.jpg */,
-				39A76160174944C800DB2BEC /* userImage3.jpg */,
-				39A76161174944E200DB2BEC /* AsyncImageView.h */,
-				39A76162174944E200DB2BEC /* AsyncImageView.m */,
-				39A76163174944E200DB2BEC /* JSONKit.h */,
-				39A76164174944E200DB2BEC /* JSONKit.m */,
-				39A76165174944E200DB2BEC /* UGDataSource.h */,
-				39A76166174944E200DB2BEC /* UGDataSource.m */,
-				39A76167174944E200DB2BEC /* UGFriendCell.h */,
-				39A76168174944E200DB2BEC /* UGFriendCell.m */,
-				39A76169174944E200DB2BEC /* UGFriendTableViewController.h */,
-				39A7616A174944E200DB2BEC /* UGFriendTableViewController.m */,
-				39A7616B174944E200DB2BEC /* UGHomeCell.h */,
-				39A7616C174944E200DB2BEC /* UGHomeCell.m */,
+				39A761821749472F00DB2BEC /* FriendTable */,
+				39A761811749471700DB2BEC /* HomeTable */,
+				39A76180174946FD00DB2BEC /* DataSource */,
+				39A7617F174946EE00DB2BEC /* AsyncImageView */,
+				39A7617E174946DC00DB2BEC /* JSONKit */,
 				39A7613B1749448800DB2BEC /* Supporting Files */,
 			);
 			path = "Tracking-Clock";
@@ -144,6 +156,59 @@
 				39A7614A1749448800DB2BEC /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		39A7617E174946DC00DB2BEC /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				39A76163174944E200DB2BEC /* JSONKit.h */,
+				39A76164174944E200DB2BEC /* JSONKit.m */,
+			);
+			name = JSONKit;
+			sourceTree = "<group>";
+		};
+		39A7617F174946EE00DB2BEC /* AsyncImageView */ = {
+			isa = PBXGroup;
+			children = (
+				39A76161174944E200DB2BEC /* AsyncImageView.h */,
+				39A76162174944E200DB2BEC /* AsyncImageView.m */,
+			);
+			name = AsyncImageView;
+			sourceTree = "<group>";
+		};
+		39A76180174946FD00DB2BEC /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				39A76157174944C800DB2BEC /* tracking.plist */,
+				39A7615E174944C800DB2BEC /* userImage.jpg */,
+				39A7615F174944C800DB2BEC /* userImage2.jpg */,
+				39A76160174944C800DB2BEC /* userImage3.jpg */,
+				39A76165174944E200DB2BEC /* UGDataSource.h */,
+				39A76166174944E200DB2BEC /* UGDataSource.m */,
+			);
+			name = DataSource;
+			sourceTree = "<group>";
+		};
+		39A761811749471700DB2BEC /* HomeTable */ = {
+			isa = PBXGroup;
+			children = (
+				39A7616B174944E200DB2BEC /* UGHomeCell.h */,
+				39A7616C174944E200DB2BEC /* UGHomeCell.m */,
+				39A76158174944C800DB2BEC /* UGHomeTableViewController.h */,
+				39A76159174944C800DB2BEC /* UGHomeTableViewController.m */,
+			);
+			name = HomeTable;
+			sourceTree = "<group>";
+		};
+		39A761821749472F00DB2BEC /* FriendTable */ = {
+			isa = PBXGroup;
+			children = (
+				39A76167174944E200DB2BEC /* UGFriendCell.h */,
+				39A76168174944E200DB2BEC /* UGFriendCell.m */,
+				39A76169174944E200DB2BEC /* UGFriendTableViewController.h */,
+				39A7616A174944E200DB2BEC /* UGFriendTableViewController.m */,
+			);
+			name = FriendTable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,6 +278,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39A7616D1749462F00DB2BEC /* UGHomeTableViewController.m in Sources */,
+				39A7616E1749462F00DB2BEC /* UGImagePin.m in Sources */,
+				39A7616F1749462F00DB2BEC /* UGMapViewController.m in Sources */,
+				39A761701749462F00DB2BEC /* AsyncImageView.m in Sources */,
+				39A761711749462F00DB2BEC /* JSONKit.m in Sources */,
+				39A761721749462F00DB2BEC /* UGDataSource.m in Sources */,
+				39A761731749462F00DB2BEC /* UGFriendCell.m in Sources */,
+				39A761741749462F00DB2BEC /* UGFriendTableViewController.m in Sources */,
+				39A761751749462F00DB2BEC /* UGHomeCell.m in Sources */,
 				39A761411749448800DB2BEC /* main.m in Sources */,
 				39A761451749448800DB2BEC /* UGAppDelegate.m in Sources */,
 			);
