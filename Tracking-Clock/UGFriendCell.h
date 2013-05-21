@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UGCheckButton.h"
 
 @interface UGFriendCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UIImageView *friendImage;
 @property (strong, nonatomic) IBOutlet UILabel *friendName;
+@property (strong, nonatomic) IBOutlet UGCheckButton *checkMark;
 
 @end

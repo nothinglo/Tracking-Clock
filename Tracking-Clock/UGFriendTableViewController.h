@@ -21,7 +21,15 @@
 @property (strong, nonatomic) NSArray *allFriendImagesURLs;
 @property (strong, nonatomic) NSMutableArray *filteredFriendImagesURLs;
 
+@property (strong, nonatomic) NSMutableArray *allFriendCheckMark;
+@property (strong, nonatomic) NSMutableArray *filteredFriendCheckMark;
+
 @property (strong, nonatomic) UIActivityIndicatorView *loadingIndicator;
 @property (strong, nonatomic) UIImageView *waitingBackground;
+
+@property (strong, nonatomic) UIImage *turnOFF;
+@property (strong, nonatomic) UIImage *turnON;
+
+- (IBAction)tapTheCheckButton:(id)sender;
 
 @end

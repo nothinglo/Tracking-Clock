@@ -12,8 +12,6 @@
 #import "AsyncImageView.h"
 #import <QuartzCore/QuartzCore.h>
 
-static NSString *UGFriendTablePictureByID = @"https://graph.facebook.com/%@/picture?type=normal";
-
 NSString * const UGFriendTableDictKeyData = @"data";
 NSString * const UGFriendTableDictKeyName = @"name";
 NSString * const UGFriendTableDictKeyID = @"id";
@@ -24,6 +22,10 @@ NSString * const UGFriendTableDictKeyID = @"id";
 
 @implementation UGFriendTableViewController
 
+- (void)viewWillDisappear:(BOOL)animated {
+    searchBar.delegate = nil;
+    self.searchDisplayController.delegate = nil;
+}
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -53,6 +55,11 @@ NSString * const UGFriendTableDictKeyID = @"id";
                                                if (handler) handler(account);
                                            } else {
                                                NSLog(@"Auth Error: %@", [error localizedDescription]);
+                                               double delayInSeconds = 0.5;
+                                               dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+                                               dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                                                   [self.navigationController popViewControllerAnimated:YES];
+                                               });
                                            }
                                        }];
 }
@@ -63,7 +70,7 @@ NSString * const UGFriendTableDictKeyID = @"id";
     self.loadingIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     self.waitingBackground = [[UIImageView alloc] initWithFrame:self.tableView.bounds];
     self.waitingBackground.image = [UIImage imageNamed:@"Default.png"];
-    self.waitingBackground.alpha = 0.5;
+    self.waitingBackground.alpha = 0.7;
     self.loadingIndicator.center = CGPointMake(160, 165);
     
     [self.tableView addSubview:self.waitingBackground];
@@ -85,17 +92,18 @@ NSString * const UGFriendTableDictKeyID = @"id";
         SLRequest *request = [SLRequest requestForServiceType:SLServiceTypeFacebook
                                                 requestMethod:SLRequestMethodGET
                                                           URL:[NSURL URLWithString:@"https://graph.facebook.com/me/friends"]
-                                                   parameters:@{}];
+                                                   parameters:@{@"fields":@"id,name,picture"}];
         request.account = facebookAccount;
         [request performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
             if (!error) {
                 NSDictionary *responseDict = [responseData objectFromJSONData];
                 self.allFriendDatas = responseDict[UGFriendTableDictKeyData];
+                self.allFriendCheckMark = [NSMutableArray new];
                 NSMutableArray *imageURLs = [NSMutableArray new];
                 for(NSDictionary *friend in self.allFriendDatas) {
-                    NSString *path =
-                    [NSString stringWithFormat:UGFriendTablePictureByID, friend[UGFriendTableDictKeyID]];
+                    NSString *path = friend[@"picture"][@"data"][@"url"];
                     [imageURLs addObject:[NSURL URLWithString:path]];
+                    [self.allFriendCheckMark addObject:[NSNumber numberWithBool:NO]];
                 }
                 self.allFriendImagesURLs = [NSArray arrayWithArray:imageURLs];
                 dispatch_async(dispatch_get_main_queue(), ^{
@@ -112,7 +120,8 @@ NSString * const UGFriendTableDictKeyID = @"id";
                                                                        delegate:self
                                                               cancelButtonTitle:@"Cancel"
                                                               otherButtonTitles:@"Refresh", nil];
-                    [alertView show];
+                    if(searchBar.delegate != nil)
+                        [alertView show];
                 });
             }
         }];
@@ -123,6 +132,9 @@ NSString * const UGFriendTableDictKeyID = @"id";
     [super viewDidLoad];
     self.filteredFriendDatas = [NSMutableArray new];
     self.filteredFriendImagesURLs = [NSMutableArray new];
+    self.filteredFriendCheckMark = [NSMutableArray new];
+    self.turnOFF = [UIImage imageNamed:@"cb_mono_off@2x.png"];
+    self.turnON = [UIImage imageNamed:@"cb_mono_on@2x.png"];
     [self setViewLayout];
     [self loadingFriendsData];
 }
@@ -153,25 +165,33 @@ NSString * const UGFriendTableDictKeyID = @"id";
 {
     static NSString *CellIdentifier = @"friendCell";
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
     UGFriendCell *friendCell = (UGFriendCell *)cell;
     if(tableView == self.searchDisplayController.searchResultsTableView) {
         friendCell.friendName.text = self.filteredFriendDatas[indexPath.row][UGFriendTableDictKeyName];
         [[AsyncImageLoader sharedLoader] cancelLoadingImagesForTarget:friendCell.friendImage];
         friendCell.friendImage.imageURL = [self.filteredFriendImagesURLs objectAtIndex:indexPath.row];
+        UIImage *image = [[self.filteredFriendCheckMark objectAtIndex:indexPath.row][@"mark"] boolValue] ? self.turnON : self.turnOFF;
+        [friendCell.checkMark setBackgroundImage:image forState:UIControlStateNormal];
+        friendCell.checkMark.indexInFilter = indexPath.row;
+        friendCell.checkMark.indexInAll = -1;
     } else {
         friendCell.friendName.text = self.allFriendDatas[indexPath.row][UGFriendTableDictKeyName];
+        friendCell.friendImage.image = nil;
         [[AsyncImageLoader sharedLoader] cancelLoadingImagesForTarget:friendCell.friendImage];
         friendCell.friendImage.imageURL = [self.allFriendImagesURLs objectAtIndex:indexPath.row];
+        UIImage *image = [[self.allFriendCheckMark objectAtIndex:indexPath.row] boolValue] ? self.turnON : self.turnOFF;
+        [friendCell.checkMark setBackgroundImage:image forState:UIControlStateNormal];
+        friendCell.checkMark.indexInAll = indexPath.row;
+        friendCell.checkMark.indexInFilter = -1;
     }
     return cell;
 }
-
 #pragma mark - searchDisplayController Delegate
 
 - (void)searchForTerm:(NSString *)searchText {
     [self.filteredFriendDatas removeAllObjects];
     [self.filteredFriendImagesURLs removeAllObjects];
+    [self.filteredFriendCheckMark removeAllObjects];
     for (NSUInteger index = 0; index < [self.allFriendDatas count]; ++index)
     {
         NSDictionary *friend = [self.allFriendDatas objectAtIndex:index];
@@ -180,10 +200,14 @@ NSString * const UGFriendTableDictKeyID = @"id";
         {
             [self.filteredFriendDatas addObject:friend];
             [self.filteredFriendImagesURLs addObject:[self.allFriendImagesURLs objectAtIndex:index]];
+            NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:
+                                        [self.allFriendCheckMark objectAtIndex:index], @"mark",
+                                        [NSNumber numberWithInteger:index], @"indexOfAll",
+                                        nil];
+            [self.filteredFriendCheckMark addObject:dic];
         }
     }
 }
-
 -(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
     [self searchForTerm:searchString];
     return YES;
@@ -243,4 +267,28 @@ NSString * const UGFriendTableDictKeyID = @"id";
      */
 }
 
+- (IBAction)tapTheCheckButton:(id)sender {
+    UGCheckButton *button = (UGCheckButton *)sender;
+    if(button.indexInAll >= 0) {
+        BOOL value = ![self.allFriendCheckMark[button.indexInAll] boolValue];
+        UIImage *image = value ? self.turnON : self.turnOFF;
+        [button setBackgroundImage:image forState:UIControlStateNormal];
+        [self.allFriendCheckMark replaceObjectAtIndex:button.indexInAll withObject:[NSNumber numberWithBool:value]];
+    } else {
+        BOOL value = ![self.filteredFriendCheckMark[button.indexInFilter][@"mark"] boolValue];
+        UIImage *image = value ? self.turnON : self.turnOFF;
+        [button setBackgroundImage:image forState:UIControlStateNormal];
+        NSNumber *obj = [NSNumber numberWithBool:value];
+        NSNumber *indexOfAll = [self.filteredFriendCheckMark objectAtIndex:button.indexInFilter][@"indexOfAll"];
+        NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:
+                                obj, @"mark",
+                                indexOfAll, @"indexOfAll",
+                                nil];
+        [self.filteredFriendCheckMark replaceObjectAtIndex:button.indexInFilter withObject:dic];
+        [self.allFriendCheckMark replaceObjectAtIndex:[indexOfAll integerValue] withObject:obj];
+        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:[indexOfAll integerValue] inSection:0];
+        NSArray *arrayOfIndexPath = [NSArray arrayWithObject:indexPath];
+        [self.tableView reloadRowsAtIndexPaths:arrayOfIndexPath withRowAnimation:UITableViewRowAnimationNone];
+    }
+}
 @end

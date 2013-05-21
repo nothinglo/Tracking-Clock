@@ -179,10 +179,16 @@ NSString *const AsyncImageErrorKey = @"error";
 		if (!_cancelled)
 		{
             UIImage *image = [[UIImage alloc] initWithData:data];
-            CGFloat border = MIN(image.size.width, image.size.height);
-            CGImageRef ref = CGImageCreateWithImageInRect(image.CGImage, CGRectMake(0, 0, border, border));
+            /*CGRect rect;
+            if(image.size.width > image.size.height) {
+                rect = CGRectMake((image.size.width - image.size.height) * 0.5, 0, image.size.height, image.size.height);
+            } else {
+                rect = CGRectMake(0, (image.size.height - image.size.width) * 0.5, image.size.width, image.size.width);
+            }
+            CGImageRef ref = CGImageCreateWithImageInRect(image.CGImage, rect);
             image = [UIImage imageWithCGImage:ref];
             CGImageRelease(ref);
+             */
 			if (image)
 			{
 				//add to cache (may be cached already but it doesn't matter)

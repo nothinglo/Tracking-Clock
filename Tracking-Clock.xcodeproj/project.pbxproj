@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39A08497174AA4BC006202BB /* tracking.plist in Resources */ = {isa = PBXBuildFile; fileRef = 39A08496174AA4BC006202BB /* tracking.plist */; };
+		39A0849B174AA4C7006202BB /* userImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 39A08498174AA4C7006202BB /* userImage.jpg */; };
+		39A0849C174AA4C7006202BB /* userImage2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 39A08499174AA4C7006202BB /* userImage2.jpg */; };
+		39A0849D174AA4C7006202BB /* userImage3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 39A0849A174AA4C7006202BB /* userImage3.jpg */; };
+		39A084A1174AA59A006202BB /* cb_mono_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 39A0849F174AA59A006202BB /* cb_mono_on@2x.png */; };
+		39A084A3174AA5AE006202BB /* cb_mono_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 39A084A2174AA5AE006202BB /* cb_mono_off@2x.png */; };
+		39A084A6174AA881006202BB /* UGCheckButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A084A5174AA881006202BB /* UGCheckButton.m */; };
 		39A761351749448800DB2BEC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39A761341749448800DB2BEC /* UIKit.framework */; };
 		39A761371749448800DB2BEC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39A761361749448800DB2BEC /* Foundation.framework */; };
 		39A761391749448800DB2BEC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39A761381749448800DB2BEC /* CoreGraphics.framework */; };
@@ -33,6 +40,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		39A08496174AA4BC006202BB /* tracking.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tracking.plist; sourceTree = "<group>"; };
+		39A08498174AA4C7006202BB /* userImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = userImage.jpg; sourceTree = "<group>"; };
+		39A08499174AA4C7006202BB /* userImage2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = userImage2.jpg; sourceTree = "<group>"; };
+		39A0849A174AA4C7006202BB /* userImage3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = userImage3.jpg; sourceTree = "<group>"; };
+		39A0849F174AA59A006202BB /* cb_mono_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cb_mono_on@2x.png"; sourceTree = "<group>"; };
+		39A084A2174AA5AE006202BB /* cb_mono_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cb_mono_off@2x.png"; sourceTree = "<group>"; };
+		39A084A4174AA881006202BB /* UGCheckButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UGCheckButton.h; sourceTree = "<group>"; };
+		39A084A5174AA881006202BB /* UGCheckButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UGCheckButton.m; sourceTree = "<group>"; };
 		39A761311749448800DB2BEC /* Tracking-Clock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tracking-Clock.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		39A761341749448800DB2BEC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		39A761361749448800DB2BEC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -47,16 +62,12 @@
 		39A761481749448800DB2BEC /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		39A7614A1749448800DB2BEC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		39A7614D1749448800DB2BEC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		39A76157174944C800DB2BEC /* tracking.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = tracking.plist; sourceTree = "<group>"; };
 		39A76158174944C800DB2BEC /* UGHomeTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UGHomeTableViewController.h; sourceTree = "<group>"; };
 		39A76159174944C800DB2BEC /* UGHomeTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UGHomeTableViewController.m; sourceTree = "<group>"; };
 		39A7615A174944C800DB2BEC /* UGImagePin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UGImagePin.h; sourceTree = "<group>"; };
 		39A7615B174944C800DB2BEC /* UGImagePin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UGImagePin.m; sourceTree = "<group>"; };
 		39A7615C174944C800DB2BEC /* UGMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UGMapViewController.h; sourceTree = "<group>"; };
 		39A7615D174944C800DB2BEC /* UGMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UGMapViewController.m; sourceTree = "<group>"; };
-		39A7615E174944C800DB2BEC /* userImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = userImage.jpg; sourceTree = "<group>"; };
-		39A7615F174944C800DB2BEC /* userImage2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = userImage2.jpg; sourceTree = "<group>"; };
-		39A76160174944C800DB2BEC /* userImage3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = userImage3.jpg; sourceTree = "<group>"; };
 		39A76161174944E200DB2BEC /* AsyncImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
 		39A76162174944E200DB2BEC /* AsyncImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
 		39A76163174944E200DB2BEC /* JSONKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
@@ -93,6 +104,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		39A08466174A902B006202BB /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				39A084A2174AA5AE006202BB /* cb_mono_off@2x.png */,
+				39A0849F174AA59A006202BB /* cb_mono_on@2x.png */,
+			);
+			name = Graphics;
+			sourceTree = "<group>";
+		};
 		39A761281749448800DB2BEC = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +157,7 @@
 				39A761821749472F00DB2BEC /* FriendTable */,
 				39A761811749471700DB2BEC /* HomeTable */,
 				39A76180174946FD00DB2BEC /* DataSource */,
+				39A08466174A902B006202BB /* Graphics */,
 				39A7617F174946EE00DB2BEC /* AsyncImageView */,
 				39A7617E174946DC00DB2BEC /* JSONKit */,
 				39A7613B1749448800DB2BEC /* Supporting Files */,
@@ -179,10 +200,10 @@
 		39A76180174946FD00DB2BEC /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
-				39A76157174944C800DB2BEC /* tracking.plist */,
-				39A7615E174944C800DB2BEC /* userImage.jpg */,
-				39A7615F174944C800DB2BEC /* userImage2.jpg */,
-				39A76160174944C800DB2BEC /* userImage3.jpg */,
+				39A08496174AA4BC006202BB /* tracking.plist */,
+				39A08498174AA4C7006202BB /* userImage.jpg */,
+				39A08499174AA4C7006202BB /* userImage2.jpg */,
+				39A0849A174AA4C7006202BB /* userImage3.jpg */,
 				39A76165174944E200DB2BEC /* UGDataSource.h */,
 				39A76166174944E200DB2BEC /* UGDataSource.m */,
 			);
@@ -203,6 +224,8 @@
 		39A761821749472F00DB2BEC /* FriendTable */ = {
 			isa = PBXGroup;
 			children = (
+				39A084A4174AA881006202BB /* UGCheckButton.h */,
+				39A084A5174AA881006202BB /* UGCheckButton.m */,
 				39A76167174944E200DB2BEC /* UGFriendCell.h */,
 				39A76168174944E200DB2BEC /* UGFriendCell.m */,
 				39A76169174944E200DB2BEC /* UGFriendTableViewController.h */,
@@ -268,6 +291,12 @@
 				39A761491749448800DB2BEC /* Default@2x.png in Resources */,
 				39A7614B1749448800DB2BEC /* Default-568h@2x.png in Resources */,
 				39A7614E1749448800DB2BEC /* MainStoryboard.storyboard in Resources */,
+				39A08497174AA4BC006202BB /* tracking.plist in Resources */,
+				39A0849B174AA4C7006202BB /* userImage.jpg in Resources */,
+				39A0849C174AA4C7006202BB /* userImage2.jpg in Resources */,
+				39A0849D174AA4C7006202BB /* userImage3.jpg in Resources */,
+				39A084A1174AA59A006202BB /* cb_mono_on@2x.png in Resources */,
+				39A084A3174AA5AE006202BB /* cb_mono_off@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +318,7 @@
 				39A761751749462F00DB2BEC /* UGHomeCell.m in Sources */,
 				39A761411749448800DB2BEC /* main.m in Sources */,
 				39A761451749448800DB2BEC /* UGAppDelegate.m in Sources */,
+				39A084A6174AA881006202BB /* UGCheckButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +441,7 @@
 				39A761561749448800DB2BEC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

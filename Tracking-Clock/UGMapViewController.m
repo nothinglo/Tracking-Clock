@@ -16,6 +16,9 @@
 
 @implementation UGMapViewController
 
+- (void)dealloc {
+    self.mapView.delegate = nil;
+}
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
