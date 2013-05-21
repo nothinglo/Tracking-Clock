@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		399A7EE7174B73E40006F6E5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 399A7EE6174B73E40006F6E5 /* AudioToolbox.framework */; };
+		399A7EE9174B73EF0006F6E5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 399A7EE8174B73EF0006F6E5 /* SystemConfiguration.framework */; };
+		399A7EEB174B73F80006F6E5 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 399A7EEA174B73F80006F6E5 /* StoreKit.framework */; };
+		399A7EED174B740A0006F6E5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 399A7EEC174B740A0006F6E5 /* Security.framework */; };
+		399A7EEF174B74240006F6E5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 399A7EEE174B74240006F6E5 /* QuartzCore.framework */; };
+		399A7EF1174B742D0006F6E5 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 399A7EF0174B742D0006F6E5 /* MobileCoreServices.framework */; };
+		399A7EF3174B743C0006F6E5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 399A7EF2174B743C0006F6E5 /* CFNetwork.framework */; };
+		399A7EF5174B74450006F6E5 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 399A7EF4174B74450006F6E5 /* AdSupport.framework */; };
+		399A7EF7174B74C80006F6E5 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 399A7EF6174B74C80006F6E5 /* Parse.framework */; };
 		39A08497174AA4BC006202BB /* tracking.plist in Resources */ = {isa = PBXBuildFile; fileRef = 39A08496174AA4BC006202BB /* tracking.plist */; };
 		39A0849B174AA4C7006202BB /* userImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 39A08498174AA4C7006202BB /* userImage.jpg */; };
 		39A0849C174AA4C7006202BB /* userImage2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 39A08499174AA4C7006202BB /* userImage2.jpg */; };
@@ -40,6 +49,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		399A7EE6174B73E40006F6E5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		399A7EE8174B73EF0006F6E5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		399A7EEA174B73F80006F6E5 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		399A7EEC174B740A0006F6E5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		399A7EEE174B74240006F6E5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		399A7EF0174B742D0006F6E5 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		399A7EF2174B743C0006F6E5 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		399A7EF4174B74450006F6E5 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		399A7EF6174B74C80006F6E5 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		39A08496174AA4BC006202BB /* tracking.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tracking.plist; sourceTree = "<group>"; };
 		39A08498174AA4C7006202BB /* userImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = userImage.jpg; sourceTree = "<group>"; };
 		39A08499174AA4C7006202BB /* userImage2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = userImage2.jpg; sourceTree = "<group>"; };
@@ -91,6 +109,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				399A7EF5174B74450006F6E5 /* AdSupport.framework in Frameworks */,
+				399A7EF3174B743C0006F6E5 /* CFNetwork.framework in Frameworks */,
+				399A7EF1174B742D0006F6E5 /* MobileCoreServices.framework in Frameworks */,
+				399A7EEF174B74240006F6E5 /* QuartzCore.framework in Frameworks */,
+				399A7EED174B740A0006F6E5 /* Security.framework in Frameworks */,
+				399A7EEB174B73F80006F6E5 /* StoreKit.framework in Frameworks */,
+				399A7EE9174B73EF0006F6E5 /* SystemConfiguration.framework in Frameworks */,
+				399A7EE7174B73E40006F6E5 /* AudioToolbox.framework in Frameworks */,
 				39A7617D174946B600DB2BEC /* MapKit.framework in Frameworks */,
 				39A7617B174946B000DB2BEC /* CoreLocation.framework in Frameworks */,
 				39A76179174946A800DB2BEC /* Social.framework in Frameworks */,
@@ -98,6 +124,7 @@
 				39A761351749448800DB2BEC /* UIKit.framework in Frameworks */,
 				39A761371749448800DB2BEC /* Foundation.framework in Frameworks */,
 				39A761391749448800DB2BEC /* CoreGraphics.framework in Frameworks */,
+				399A7EF7174B74C80006F6E5 /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +160,15 @@
 		39A761331749448800DB2BEC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				399A7EF6174B74C80006F6E5 /* Parse.framework */,
+				399A7EF4174B74450006F6E5 /* AdSupport.framework */,
+				399A7EF2174B743C0006F6E5 /* CFNetwork.framework */,
+				399A7EF0174B742D0006F6E5 /* MobileCoreServices.framework */,
+				399A7EEE174B74240006F6E5 /* QuartzCore.framework */,
+				399A7EEC174B740A0006F6E5 /* Security.framework */,
+				399A7EEA174B73F80006F6E5 /* StoreKit.framework */,
+				399A7EE8174B73EF0006F6E5 /* SystemConfiguration.framework */,
+				399A7EE6174B73E40006F6E5 /* AudioToolbox.framework */,
 				39A7617C174946B600DB2BEC /* MapKit.framework */,
 				39A7617A174946B000DB2BEC /* CoreLocation.framework */,
 				39A76178174946A800DB2BEC /* Social.framework */,
@@ -403,6 +439,10 @@
 		39A761551749448800DB2BEC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tracking-Clock/Tracking-Clock-Prefix.pch";
 				INFOPLIST_FILE = "Tracking-Clock/Tracking-Clock-Info.plist";
@@ -414,6 +454,10 @@
 		39A761561749448800DB2BEC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tracking-Clock/Tracking-Clock-Prefix.pch";
 				INFOPLIST_FILE = "Tracking-Clock/Tracking-Clock-Info.plist";
